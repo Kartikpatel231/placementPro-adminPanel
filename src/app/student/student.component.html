@@ -1,0 +1,26 @@
+<p>student works!</p>
+<div class="search-bar">
+    <input type="text" [(ngModel)]="searchStudentId" placeholder="Enter Student ID">
+    <button (click)="searchStudent()">Search</button>
+  </div>
+  <h1>Student Detail</h1>
+<div *ngIf="studentProfile">
+<div class="student-details">
+    <div class="student-image">
+        <img src="assets/{{ studentProfile.imagePath }}" alt="Student Image">
+    </div>
+    <div class="student-info">
+
+        <p><strong>Student Name:</strong>{{studentProfile.studentName}}</p>
+        <p><strong>EnrollementNumber</strong>{{studentProfile.enrollementNumber}}</p>
+        <p><strong>Father's Name</strong>{{studentProfile.fatherName}}</p>
+        <p><strong>Mother's Name</strong>{{studentProfile.motherName}}</p>
+        <p><strong>Mobile Number</strong>{{studentProfile.mobileNumber}}</p>
+        <p><strong>Category</strong>{{studentProfile.category}}</p>
+        <p><strong>Date Of Birth</strong>{{studentProfile.dateOfBirth}}</p>
+        <p><strong>Address</strong>{{studentProfile.address1}}</p>
+            
+    </div>
+</div>
+
+</div>

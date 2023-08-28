@@ -1,0 +1,17 @@
+<h1>Company List</h1>
+<ul class="company-list">
+    <li *ngFor="let company of companies">{{ company.name }}
+
+        <div class="company-details">
+            <p><strong>Name:</strong>{{company.name}}</p>
+            <p><strong>Description:</strong>{{company.description}}</p>
+            <p><strong>Registration:</strong>{{company.registration}} </p>
+            <p><strong>Website:</strong> <a [href]="company.website" target="_blank">{{company.website}}</a></p>
+        </div>
+         <div class="company-actions">
+            <button (click)="editCompany(company.companyId)">Edit</button>
+            <button (click)="deleteCompany(company.companyId)">Delete</button>
+          </div>
+    </li>
+</ul>
+
