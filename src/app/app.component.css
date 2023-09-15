@@ -1,0 +1,22 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+    margin-top: 2px;
+  }
+  
+  .dashboard-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3px;
+    background-color: #f0f0f0;
+  }
+  
+  .dashboard-content {
+    flex: 1;
+    padding: 3px;
+    background-color: #ffffff;
+    overflow-y: auto;
+  }
+  

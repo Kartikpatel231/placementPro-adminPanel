@@ -1,1 +1,33 @@
-<p>status-approval works!</p>
+<h1>Statuse Send To Company</h1>
+<div class="student-approval">
+    <label for="status">Select Status</label>
+    <select id="status" name="status">
+        <option value="APPROVED">Approved</option>
+        <option value="PENDING">Pending</option>
+    </select>
+    <label for="company">Select Company:</label>
+    <select id="company" name="company">
+        <option *ngFor="let company of companies" [value]="company.name">{{ company.name }}</option>
+    </select>
+    <button type="button" (click)="sendStatus()">Send</button>
+</div>
+<div class="student-list">
+<h1>Student-List</h1>
+<div *ngFor="let student of students" class="student-card">
+    <h2>{{student.fullName}}</h2>
+    <!-- <p><strong>Student ID:</strong> {{student.studentId}}</p> -->
+    <p><strong>Gender:</strong>{{student.gender}}</p>
+    <p><strong>Status:</strong>{{student.status}}</p>
+    <div *ngIf="student.studentProfileEntity">
+    <p><strong>Student Enrollment:</strong>{{student.studentProfileEntity.enrollementNumber}}</p>
+    </div>
+<div *ngIf="student.resumeEntity">
+    <h3>Resume</h3>
+    <p>{{student.resumeEntity.resumeName}}</p>
+    <a [href]="student.resumeEntity.resumeUrl" download>Download</a>
+</div>
+<hr>
+<button (click)="viewStudentDetails(student.studentId)">View Full Profile</button>
+</div>
+<button (click)="exportToExcel()">Export to Excel</button>
+</div>

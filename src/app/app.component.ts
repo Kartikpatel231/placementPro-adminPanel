@@ -25,4 +25,18 @@ export class AppComponent {
     navigateToStudentApproval(){
       this.router.navigate(['/status']);
     }
+    actions=[{
+         route:"/home",title:"home","icon":"house"
+    },
+    {
+      route:"/gpt",title:"gpt","icon":"person"
+ }
+    
+  ]
+  addKartik(){
+   console.log('kartik');   
+  }
+  handleRoute(action:any){
+      this.router.navigateByUrl(action.route);
+  }
 }

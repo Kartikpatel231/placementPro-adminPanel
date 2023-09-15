@@ -1,4 +1,6 @@
 import { studentProfile } from "../student/studentProfile";
+import { University } from "../university-details/university";
+import { UniversityData } from "../university-details/UniversityData";
 
 interface Company{
     companyId:number;
@@ -26,4 +28,5 @@ export interface Student{
     feedbackEntity?:Feedback;
     resumeEntity?:Resume;
     status?:string;
+    universityDetailEntity:University;
 }

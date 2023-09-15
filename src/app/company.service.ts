@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -37,5 +38,8 @@ export class CompanyService {
     formData.companyId = companyId; // Set the companyId in the request body
     return this.http.post(url, formData);
   }
-  
+  sendStatusData(data:any):Observable<any>{
+    const url=`${this.baseUrl}/api/v3/${data.status}/approved/${data.company}?status=${data.status}`;
+    return this.http.get<any>(url);
+  }  
 }

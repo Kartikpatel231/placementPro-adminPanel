@@ -1,0 +1,74 @@
+.student-approval {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-approval label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .student-approval select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .student-approval button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .student-approval button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Scrollable list */
+  .student-approval select[size] {
+    overflow: auto;
+  }
+  .student-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .student-card{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin:10px;
+    border-radius:5px;
+    width:70%;
+    background-color: #f9f9f9;
+    }
+    .student-card h2{
+    margin: 0;
+    }
+    .student-card h3{
+    margin-top: 10px;
+    }
+    ul{
+    padding: 0;
+    margin: 0;
+    list-style:none;
+    }
+    li{
+        margin: 5px 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #007bff;
+      }

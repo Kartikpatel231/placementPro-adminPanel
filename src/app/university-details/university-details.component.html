@@ -1,0 +1,35 @@
+<!-- Import Angular Material styles -->
+
+<p>university-details works!</p>
+<h1>Approve University</h1>
+
+<div class="student-approval">
+  <!-- Add "Select All" checkbox -->
+  <mat-checkbox [(ngModel)]="selectAll" (change)="toggleAllSelection()">Select All</mat-checkbox>
+
+  <!-- Checkboxes for individual options -->
+  <mat-checkbox [(ngModel)]="sendCGPA">Send CGPA</mat-checkbox>
+  <mat-checkbox [(ngModel)]="sendSGPA">Send SGPA</mat-checkbox>
+  <mat-checkbox [(ngModel)]="sendTenthMarks">Send 10th Marks</mat-checkbox>
+  <mat-checkbox [(ngModel)]="sendTwelfthMarks">Send 12th Marks</mat-checkbox>
+
+  <!-- Input fields for data -->
+  <mat-form-field appearance="fill" *ngIf="sendCGPA  || selectAll">
+    <mat-label>CGPA</mat-label>
+    <input matInput [(ngModel)]="universityData.cgpa" placeholder="CGPA">
+  </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="sendSGPA  || selectAll">
+    <mat-label>SGPA</mat-label>
+    <input matInput [(ngModel)]="universityData.sgpa" placeholder="SGPA">
+  </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="sendTenthMarks">
+    <mat-label>10th Marks</mat-label>
+    <input matInput [(ngModel)]="universityData.tenthMarks" placeholder="10th Marks">
+  </mat-form-field>
+  <mat-form-field appearance="fill" *ngIf="sendTwelfthMarks">
+    <mat-label>12th Marks</mat-label>
+    <input matInput [(ngModel)]="universityData.twelfthMarks" placeholder="12th Marks">
+  </mat-form-field>
+</div>
+
+<button mat-raised-button color="primary" (click)="updateUniversity()">Update Status</button>

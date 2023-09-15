@@ -1,4 +1,3 @@
-<p>student-list works!</p>
 <div class="student-list">
 <h1>Student-List</h1>
 <div *ngFor="let student of students" class="student-card">
@@ -8,6 +7,12 @@
     <p><strong>Status:</strong>{{student.status}}</p>
     <div *ngIf="student.studentProfileEntity">
     <p><strong>Student Enrollment:</strong>{{student.studentProfileEntity.enrollementNumber}}</p>
+    </div>
+    <div *ngIf="student.universityDetailEntity">
+        <h3>UniversityDetials</h3>
+    <p><strong>cgpa</strong>{{student.universityDetailEntity.cgpa}}</p>
+    <p><strong>sgpa</strong>{{student.universityDetailEntity.sgpa}}</p>
+
     </div>
 <div *ngIf="student.companyEntities">
     <h3>Companies</h3>
