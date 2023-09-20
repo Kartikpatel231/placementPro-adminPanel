@@ -44,6 +44,9 @@ export class StudentsService {
     if ( universityData.twelfthMarks!==  undefined) {
     params = params.append('twelfthMarks', universityData.twelfthMarks.toString());
     }
+    if(universityData.name!==undefined){
+      params=params.append('name',universityData.name);
+    }
     // Send the request with parameters
     return this.http.get(url,{ params });
   }

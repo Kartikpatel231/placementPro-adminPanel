@@ -1,4 +1,6 @@
+import { NgForOf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../company.service';
 import { StudentsService } from '../students.service';
 import { UniversityData } from './UniversityData';
 
@@ -8,14 +10,27 @@ import { UniversityData } from './UniversityData';
   styleUrls: ['./university-details.component.css']
 })
 export class UniversityDetailsComponent implements OnInit {
-
-  constructor(private studentService:StudentsService) { }
+ // companyName:any[]=[];
+  companyName: string[] = [];
+  selectedCompany:string;
+  constructor(private studentService:StudentsService,private companies:CompanyService) {
+    this.companies.getAllCompanies().subscribe(
+        (response: any) => {
+            
+            this.companyName = response.map(company => company.name);
+            console.log(response);
+        },
+        (error) => {
+          console.error('Error fetching companies:', error);
+        }
+      );
+   }
   universityData: UniversityData = new UniversityData();
   sendCGPA: boolean = false ;
   sendSGPA: boolean = false;
   sendTenthMarks: boolean = false;
   sendTwelfthMarks: boolean = false;
-
+   sendName:boolean=false;
 
   selectAll: boolean = false; // Initialize to false
   // ...
@@ -26,6 +41,7 @@ export class UniversityDetailsComponent implements OnInit {
     this.sendSGPA = this.selectAll;
     this.sendTenthMarks = this.selectAll;
     this.sendTwelfthMarks = this.selectAll;
+    this.sendName=this.selectAll;
   }
   // Define a function to send selected data to the backend
   updateUniversity() {
@@ -43,6 +59,9 @@ export class UniversityDetailsComponent implements OnInit {
       if (this.sendTwelfthMarks) {
           selectedData.twelfthMarks = this.universityData.twelfthMarks;
       }
+      if(this.sendName){
+        selectedData.name=this.selectedCompany;
+      }
 
       this.studentService.updateUniversityData(selectedData).subscribe(
           response => {
@@ -55,6 +74,7 @@ export class UniversityDetailsComponent implements OnInit {
           }
       );
   }
+
   ngOnInit() {
   }
 

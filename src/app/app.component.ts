@@ -25,10 +25,13 @@ export class AppComponent {
     navigateToStudentApproval(){
       this.router.navigate(['/status']);
     }
+    navigateToStudentStatus(){
+      this.router.navigate(['university/Detail'])
+    }
     actions=[{
-         route:"/home",title:"home","icon":"house"
-    },
-    {
+       //  route:"/home",title:"home","icon":"house"
+    //},
+    //{
       route:"/gpt",title:"gpt","icon":"person"
  }
     
