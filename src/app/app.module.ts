@@ -17,6 +17,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { GptComponent } from './gpt/gpt.component';
 import { UniversityDetailsComponent } from './university-details/university-details.component';
 import { UniversityDetailsListComponent } from './university-details-list/university-details-list.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,11 @@ import { UniversityDetailsListComponent } from './university-details-list/univer
     StudentComponent,
     StudentListComponent,
     StatusApprovalComponent,
-    
+    HomeComponent,
     GptComponent,
     UniversityDetailsComponent,
     UniversityDetailsListComponent,
+    LoginComponent,
     
   ],
   imports: [

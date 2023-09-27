@@ -1,3 +1,5 @@
+<a routerLink="/home" class="btn btn-primary">Back to Home</a>
+
 <h1>Statuse Send To Company</h1>
 <div class="student-approval">
     <label for="status">Select Status</label>
@@ -7,6 +9,7 @@
     </select>
     <label for="company">Select Company:</label>
     <select id="company" name="company">
+        <option  [value]="'none'">none</option>
         <option *ngFor="let company of companies" [value]="company.name">{{ company.name }}</option>
     </select>
     <button type="button" (click)="sendStatus()">Send</button>
