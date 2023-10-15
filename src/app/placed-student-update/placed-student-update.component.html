@@ -12,7 +12,7 @@
       <option value="Not Placed">Not Placed</option>
     </select>
     <label for="company">Select Company:</label>
-    <select id="company" name="company" (change)="onCompanyChange($event.target.value)">
+    <select id="company" name="company"> <!--(change)="onCompanyChange($event.target.value)"> -->
       <option value="none">none</option>
       <option *ngFor="let company of companies" [value]="company.name">{{ company.name }}</option>
     </select>
@@ -21,6 +21,13 @@
 
   <!-- Button to show all students -->
   <button type="button" (click)="getAllPlacedStudents()">Show All Students</button>
+<!-- placed-student-update.component.html -->
+
+<!-- ... (previous code) -->
+
+<!-- Input for filtering by company name -->
+<!-- <label for="companyFilter">Filter by Company Name:</label>
+<input type="text" [(ngModel)]="companyFilter" id="companyFilter"> -->
 
   <!-- Display student details -->
   <div class="student-details" *ngFor="let student of students">

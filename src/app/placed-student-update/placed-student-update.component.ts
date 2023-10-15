@@ -21,6 +21,30 @@ export class PlacedStudentUpdateComponent implements OnInit {
     this.getCompanies();
     this.getAllPlacedStudents(); // Load all students by default
   }
+  sendStatus() {
+    const enroll = (document.getElementById('enrollmentNumber') as InnerHTML);
+    const selectedStatus = (document.getElementById('status') as HTMLSelectElement).value;
+    const selectedCompany = (document.getElementById('company') as HTMLSelectElement).value;
+
+    // Construct the data to send
+    const data = {
+      status: selectedStatus,
+      company: selectedCompany,
+      enrollmentNumber: this.searchStudentId
+    };
+    this.placedService.sendStatusDatas(data).subscribe(
+      (response) => {
+        this.students = response;
+        console.log(response);
+        console.log('Status sent successfully:', response);
+        // Handle success, e.g., show a success message
+      },
+      (error) => {
+        console.error('Error sending status:', error);
+        // Handle error, e.g., show an error message
+      }
+    );
+  }
 
   getCompanies() {
     this.companyService.getAllCompanies().subscribe(
