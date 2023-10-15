@@ -7,6 +7,7 @@ import { GptComponent } from './gpt/gpt.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './login/authGuard.service';
 import { LoginComponent } from './login/login.component';
+import { PlacedStudentUpdateComponent } from './placed-student-update/placed-student-update.component';
 //import { UserDatamodulModule } from './home/user-datamodul/user-datamodul.module';
 import { StatusApprovalComponent } from './status-approval/status-approval.component';
 import { StudentListComponent } from './student-list/student-list.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
  // {path:'app',component:AppComponent},
  {path:'home',component:HomeComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
+  {path:'placmentUpdate',component:PlacedStudentUpdateComponent},
   {path:'company',component:CompanyManagementComponent,canActivate:[AuthGuard]},
   {path:'company-list',component:CompanyListComponent,canActivate:[AuthGuard]},
   {path:'student/:id',component:StudentComponent,canActivate:[AuthGuard]},

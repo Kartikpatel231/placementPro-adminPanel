@@ -1,0 +1,48 @@
+<p>placed-student-update works!</p>
+<a routerLink="/home" class="btn btn-primary">Back to Home</a>
+
+<h1>Statuse Send To Company</h1>
+<div class="student-Placed">
+  <fieldset>
+    <label for="EntrollmentNumber">Enrollment Number</label>
+    <input type="text" [(ngModel)]="searchStudentId" placeholder="Enter Student ID">
+    <label for="status">Select Status</label>
+    <select id="status" name="status">
+      <option value="Placed">Placed</option>
+      <option value="Not Placed">Not Placed</option>
+    </select>
+    <label for="company">Select Company:</label>
+    <select id="company" name="company" (change)="onCompanyChange($event.target.value)">
+      <option value="none">none</option>
+      <option *ngFor="let company of companies" [value]="company.name">{{ company.name }}</option>
+    </select>
+    <button type="button" (click)="sendStatus()">Send</button>
+  </fieldset>
+
+  <!-- Button to show all students -->
+  <button type="button" (click)="getAllPlacedStudents()">Show All Students</button>
+
+  <!-- Display student details -->
+  <div class="student-details" *ngFor="let student of students">
+    <div class="student-info">
+      <div class="info-label">Student Name:</div>
+      <div class="info-value">{{ student.studentName }}</div>
+    </div>
+    <div class="student-info">
+      <div class="info-label">Company:</div>
+      <div class="info-value">{{ student.company }}</div>
+    </div>
+    <div class="student-info">
+      <div class="info-label">Branch:</div>
+      <div class="info-value">{{ student.branch }}</div>
+    </div>
+    <div class="student-info">
+      <div class="info-label">Placement Date:</div>
+      <div class="info-value">{{ student.placementDate }}</div>
+    </div>
+    <div class="student-info">
+      <div class="info-label">Image Path:</div>
+      <div class="info-value">{{ student.imagePath }}</div>
+    </div>
+  </div>
+</div>

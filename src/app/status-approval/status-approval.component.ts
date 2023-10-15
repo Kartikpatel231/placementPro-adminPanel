@@ -58,13 +58,42 @@ export class StatusApprovalComponent implements OnInit {
     const data: any[] = [];
   
     for (const student of this.students) {
+      // const studentData: any = {
+      //   'Full Name': student.fullName,
+      //   'Gender': student.gender,
+      //   'Status': student.status,
+      //   // Add more fields as needed
+      // };
       const studentData: any = {
+        'Student ID': student.studentId,
         'Full Name': student.fullName,
         'Gender': student.gender,
         'Status': student.status,
+        'Father Name': student.studentProfileEntity.fatherName,
+        'Mother Name': student.studentProfileEntity.motherName,
+        'Mobile Number': student.studentProfileEntity.mobileNumber,
+        'Category': student.studentProfileEntity.category,
+        'Date of Birth': student.studentProfileEntity.dateOfBirth,
+        'Address': student.studentProfileEntity.address1,
+        'Blood Group': student.studentProfileEntity.bloodGroup,
+        'Enrollment Number': student.studentProfileEntity.enrollementNumber,
+        'Zipcode': student.studentProfileEntity.zipcode,
+        'Image Path': student.studentProfileEntity.imagePath,
+        'University Name': student.universityDetailEntity.universityName,
+        'Tenth Marks': student.universityDetailEntity.tenthMarks,
+        'Twelfth Marks': student.universityDetailEntity.twelfthMarks,
+        'CGPA': student.universityDetailEntity.cgpa,
+        'SGPA': student.universityDetailEntity.sgpa,
+        'Current Year': student.universityDetailEntity.currentYear,
+        'Current Semester': student.universityDetailEntity.currentSemester,
+        'Number of Backlogs': student.universityDetailEntity.numberOfBacklogs,
+        'Course': student.universityDetailEntity.course,
+        'Section': student.universityDetailEntity.section,
+        'Batches': student.universityDetailEntity.batches,
+        'Passing Year': student.universityDetailEntity.passingYear,
         // Add more fields as needed
       };
-  
+      
       data.push(studentData);
     }
   

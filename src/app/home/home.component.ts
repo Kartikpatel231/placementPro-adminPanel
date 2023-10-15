@@ -30,4 +30,7 @@ export class HomeComponent implements OnInit {
   navigateToStudentStatus(){
     this.router.navigate(['university/Detail'])
   }
+  navigateToStudentPlacment(){
+    this.router.navigate(['/placmentUpdate'])
+  }
 }

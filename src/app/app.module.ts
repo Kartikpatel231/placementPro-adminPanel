@@ -19,6 +19,7 @@ import { UniversityDetailsComponent } from './university-details/university-deta
 import { UniversityDetailsListComponent } from './university-details-list/university-details-list.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { PlacedStudentUpdateComponent } from './placed-student-update/placed-student-update.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeComponent } from './home/home.component';
     UniversityDetailsComponent,
     UniversityDetailsListComponent,
     LoginComponent,
+    PlacedStudentUpdateComponent,
     
   ],
   imports: [
