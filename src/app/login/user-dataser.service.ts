@@ -12,7 +12,7 @@ export class UserDataserService {
       return this.users;
   }
   constructor( private httpClient:HttpClient) { }
-  private baseUrl='http://localhost:8080';
+  private baseUrl='http://172.172.233.120:80';
   Register(userData: UserData): Observable<string> {
     const url = `${this.baseUrl}/api/v3/auth/admin/${userData.userName}/${userData.password}`;
     return this.httpClient.post(url, null,{ responseType: 'text' });

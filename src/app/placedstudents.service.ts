@@ -8,7 +8,7 @@ import { PlacementStudentEntity } from './placed-student-update/PlacementStudent
 })
 export class PlacedstudentsService {
 
-  private baseUrl='http://localhost:8080';
+  private baseUrl='http://172.172.233.120:80';
   constructor(private http:HttpClient) { }
 
   sendStatusDatas(data:any):Observable<any>{

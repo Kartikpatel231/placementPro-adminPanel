@@ -7,7 +7,7 @@ import { UniversityData } from './university-details/UniversityData';
   providedIn: 'root'
 })
 export class StudentsService {
-  private baseUrl='http://localhost:8080';
+  private baseUrl='http://172.172.233.120:80';
   constructor(private http:HttpClient) { }
   getStudentById(studentId:number):Observable<any>{
       const url=`${this.baseUrl}/api/v1/get/profile/${studentId}`;
