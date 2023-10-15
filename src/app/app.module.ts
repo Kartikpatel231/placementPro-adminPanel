@@ -13,10 +13,13 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StatusApprovalComponent } from './status-approval/status-approval.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatListModule, MatMenuModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
-
+import { MatSelectModule } from '@angular/material/select';
 import { GptComponent } from './gpt/gpt.component';
 import { UniversityDetailsComponent } from './university-details/university-details.component';
 import { UniversityDetailsListComponent } from './university-details-list/university-details-list.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { PlacedStudentUpdateComponent } from './placed-student-update/placed-student-update.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,12 @@ import { UniversityDetailsListComponent } from './university-details-list/univer
     StudentComponent,
     StudentListComponent,
     StatusApprovalComponent,
-    
+    HomeComponent,
     GptComponent,
     UniversityDetailsComponent,
     UniversityDetailsListComponent,
+    LoginComponent,
+    PlacedStudentUpdateComponent,
     
   ],
   imports: [
@@ -48,7 +53,7 @@ import { UniversityDetailsListComponent } from './university-details-list/univer
     MatInputModule, // Include MatInputModule
     MatFormFieldModule, // Include MatFormFieldModule
     MatButtonModule, // Include MatButtonModule
-    
+    MatSelectModule
   ],
   providers: [CompanyService],
   bootstrap: [AppComponent]

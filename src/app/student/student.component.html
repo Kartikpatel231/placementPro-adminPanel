@@ -1,3 +1,5 @@
+<a routerLink="/home" class="btn btn-primary">Back to Home</a>
+
 <div class="search-bar">
     <input type="text" [(ngModel)]="searchStudentId" placeholder="Enter Student ID">
     <button (click)="searchStudent()">Search</button>
@@ -6,7 +8,7 @@
 <div *ngIf="studentProfile">
 <div class="student-details">
     <div class="student-image">
-        <img src="assets/{{ studentProfile.imagePath }}" alt="Student Image">
+        <img src="{{ studentProfile.imagePath }}" alt="Student Image">
     </div>
     <div class="student-info">
 

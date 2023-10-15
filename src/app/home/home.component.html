@@ -1,38 +1,27 @@
-<!-- <div class="container">
-    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <h1>Login Form</h1>
-      <label for="userName">Username</label>
-      <input type="text" formControlName="userName" placeholder="Enter your username">
-      <div *ngIf="submitted && loginForm.get('userName').hasError('required')" class="text-danger">
-        Username is required.
-      </div>
-      
-      <label for="password">Password</label>
-      <input type="password" formControlName="password" placeholder="Enter your password">
-      <div *ngIf="submitted && loginForm.get('password').hasError('required')" class="text-danger">
-        Password is required.
-      </div>
-  
-      <button class="btn btn-success" type="submit">Submit</button>
-    </form>
-  </div> -->
-  <div class="container">
-    <form class="form-group" (ngSubmit)="register()">
-      <label for="name">User Name</label>
-      <input type="text" [(ngModel)]="userData.userName" name="name">
-      <label for="password">User Password</label>
-      <input type="password" [(ngModel)]="userData.userPassword" name="password">
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  <div class="container">
-    <ul>
-        <li *ngFor="let user of users">
-            <strong>Username:</strong> {{ user.userName }}
-            <br>
-            <strong>Password:</strong> {{ user.userPassword }}
-        </li>
 
-    </ul>
-  </div>
+  <h5>Welcome to the Admin Panel Dashboard</h5>
   
+  <nav class="p-3">
+    <ul class="nav nav-pills">
+      <li *ngFor="let action of actions">
+        <button  (click)="handleRoute(action)" class="btn btn-outline-success">
+          {{action.title}}
+          <i class="bi bi-{{action.icons}}"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <div class="dashboard-container">
+    <div class="dashboard-buttons">
+      <button mat-raised-button (click)="navigateToCompany()">Go to Company Management</button>
+      <button mat-raised-button (click)="navigateToCompanyList()">Go to Company-List</button>
+      <button mat-raised-button (click)="navigateToStudent()">Go to Student</button>
+      <button mat-raised-button (click)="navigateToStudentList()">Go to Student-List</button>
+      <button mat-raised-button (click)="navigateToStudentApproval()">Go to Student-ReportGenerate</button>
+      <button mat-raised-button (click)="navigateToStudentStatus()">Go To Student-Approval</button>
+      <button mat-raised-button (click)="navigateToStudentPlacment()">Go To Placment-Status-Updation</button>
+
+      <button (click)="addKartik()"></button>
+      
+    </div>
+    </div>

@@ -3,4 +3,5 @@ export class UniversityData {
     sgpa: number |null ;
     tenthMarks: number |null;
     twelfthMarks: number |null;
+    name:string|null;
 }

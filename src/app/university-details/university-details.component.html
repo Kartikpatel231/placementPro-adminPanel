@@ -1,4 +1,5 @@
 <!-- Import Angular Material styles -->
+<a routerLink="/home" class="btn btn-primary">Back to Home</a>
 
 <p>university-details works!</p>
 <h1>Approve University</h1>
@@ -12,7 +13,7 @@
   <mat-checkbox [(ngModel)]="sendSGPA">Send SGPA</mat-checkbox>
   <mat-checkbox [(ngModel)]="sendTenthMarks">Send 10th Marks</mat-checkbox>
   <mat-checkbox [(ngModel)]="sendTwelfthMarks">Send 12th Marks</mat-checkbox>
-
+  <mat-checkbox [(ngModel)]="sendName">Send Company Name</mat-checkbox>
   <!-- Input fields for data -->
   <mat-form-field appearance="fill" *ngIf="sendCGPA  || selectAll">
     <mat-label>CGPA</mat-label>
@@ -30,6 +31,15 @@
     <mat-label>12th Marks</mat-label>
     <input matInput [(ngModel)]="universityData.twelfthMarks" placeholder="12th Marks">
   </mat-form-field>
-</div>
+  <mat-form-field appearance="fill" *ngIf="sendName">
+    <mat-label>Select Company Name</mat-label>
+    <mat-select [(ngModel)]="selectedCompany">
+      <mat-option *ngFor="let company of companyName" [value]="company">
+        {{ company}}
+        </mat-option>
+    </mat-select>
 
+  </mat-form-field>
+  
+</div>
 <button mat-raised-button color="primary" (click)="updateUniversity()">Update Status</button>

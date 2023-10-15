@@ -9,7 +9,7 @@ import { FormData } from './company-management/company-management.component';
 })
 export class CompanyService {
   
-   private baseUrl='http://localhost:8080';
+   private baseUrl='http://172.172.233.120:80';
   constructor(private http:HttpClient) { }
 
   createCompany(formData:FormData):Observable<any>{ 

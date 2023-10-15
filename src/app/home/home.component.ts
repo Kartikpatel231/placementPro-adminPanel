@@ -1,54 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserDataserService } from './user-dataser.service';
-import { UserData } from './userData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit{
-  loginForm = new FormGroup({
-    userName: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
-  });
-  submitted = false;
-  constructor(private userDataser:UserDataserService){
+export class HomeComponent implements OnInit {
 
+  constructor(private router:Router) { }
+
+  ngOnInit() {
   }
-  ngOnInit(): void {
-    this.loadUsers();
+  navigateToCompany(){
+    this.router.navigate(['/company']);
   }
-  users: UserData[] = [];
-  userData=new UserData('','');
-  userName
-  register(){
-    if (this.userData.userName && this.userData.userPassword){
-      this.userDataser.Register(this.userData);
-      this.userData=new UserData('','');
-      this.loadUsers();
+  navigateToCompanyList(){
+    this.router.navigate(['/company-list']);
   }
-}
-  loadUsers() {
-    this.users =this.userDataser.getUser();
+  navigateToStudent(){
+    this.router.navigate(['/student',150]);
   }
-
-
-
-  onSubmit() {
-    this.submitted = true;
-
-    if (this.loginForm.valid) {
-      const userName = this.loginForm.get('userName').value;
-      const password = this.loginForm.get('password').value;
-
-      // You can perform any actions with the entered username and password here
-      console.log('Username: ' + userName);
-      console.log('Password: ' + password);
-
-      // Reset the form
-      this.loginForm.reset();
-    }
+  navigateToStudentList(){
+    this.router.navigate(['/student-list']);
+  }
+  navigateToStudentApproval(){
+    this.router.navigate(['/status']);
+  }
+  navigateToStudentStatus(){
+    this.router.navigate(['university/Detail'])
+  }
+  navigateToStudentPlacment(){
+    this.router.navigate(['/placmentUpdate'])
   }
 }
